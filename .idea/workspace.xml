@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5f6f3ec0-2f7e-41fe-83db-d5c243050c64" name="Default Changelist" comment="add gitignore">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="5f6f3ec0-2f7e-41fe-83db-d5c243050c64" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,18 +37,28 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="go.import.settings.migrated" value="true" />
     <property name="go.tried.to.enable.integration.vgo.integrator" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../GoSniff" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="go.vgo" />
   </component>
   <component name="RunManager">
-    <configuration name="Docker Image" type="docker-deploy" factoryName="docker-image" server-name="Docker">
-      <deployment type="docker-image">
+    <configuration name="Docker deploy" type="docker-deploy" factoryName="dockerfile" server-name="Docker">
+      <deployment type="dockerfile">
         <settings>
-          <option name="imageTag" value="saruman" />
-          <option name="command" value="" />
+          <option name="imageTag" value="" />
+          <option name="buildCliOptions" value="" />
+          <option name="command" value="saruman" />
           <option name="containerName" value="saruman" />
           <option name="entrypoint" value="saruman" />
+          <option name="portBindings">
+            <list>
+              <DockerPortBindingImpl>
+                <option name="containerPort" value="4000" />
+                <option name="hostPort" value="4000" />
+              </DockerPortBindingImpl>
+            </list>
+          </option>
           <option name="commandLineOptions" value="" />
+          <option name="sourceFilePath" value="Dockerfile" />
         </settings>
       </deployment>
       <method v="2" />
@@ -81,19 +92,19 @@
       <screen x="1920" y="0" width="1920" height="1050" />
     </state>
     <state x="2672" y="358" key="#Go_Modules/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1600785736844" />
-    <state x="2334" y="180" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1600786007727">
+    <state x="2748" y="318" width="1092" height="714" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1600879026941">
       <screen x="1920" y="0" width="1920" height="1050" />
     </state>
     <state x="414" y="180" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1600785119288" />
-    <state x="2334" y="180" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1600786007727" />
+    <state x="2748" y="318" width="1092" height="714" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1600879026941" />
     <state x="2645" y="327" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1600785518204">
       <screen x="1920" y="0" width="1920" height="1050" />
     </state>
     <state x="2645" y="327" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1600785518204" />
-    <state x="2505" y="93" key="CommitChangelistDialog2" timestamp="1600808291645">
+    <state x="2505" y="93" key="CommitChangelistDialog2" timestamp="1600808307665">
       <screen x="1920" y="0" width="1920" height="1050" />
     </state>
-    <state x="2505" y="93" key="CommitChangelistDialog2/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1600808291645" />
+    <state x="2505" y="93" key="CommitChangelistDialog2/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1600808307665" />
     <state x="740" y="280" key="FileChooserDialogImpl" timestamp="1600785126777">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -111,9 +122,13 @@
     </state>
     <state x="461" y="0" width="998" height="884" key="SettingsEditor/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1600784322424" />
     <state x="2381" y="0" key="SettingsEditor/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1600785777105" />
-    <state x="2472" y="258" key="Vcs.Push.Dialog.v2" timestamp="1600808243894">
+    <state x="2472" y="258" key="Vcs.Push.Dialog.v2" timestamp="1600808317449">
       <screen x="1920" y="0" width="1920" height="1050" />
     </state>
-    <state x="2472" y="258" key="Vcs.Push.Dialog.v2/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1600808243894" />
+    <state x="2472" y="258" key="Vcs.Push.Dialog.v2/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1600808317449" />
+    <state x="2874" y="571" width="523" height="207" key="com.intellij.docker.deployment.ui.DockerPortBindingsField.v173.dialogSize" timestamp="1600879023720">
+      <screen x="1920" y="0" width="1920" height="1050" />
+    </state>
+    <state x="2874" y="571" width="523" height="207" key="com.intellij.docker.deployment.ui.DockerPortBindingsField.v173.dialogSize/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1600879023720" />
   </component>
 </project>
