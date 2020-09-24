@@ -10,8 +10,7 @@ import "gorm.io/gorm"
 var _db *gorm.DB
 
 func InitDb() error {
-	connString := os.Getenv("MY_SQL_GORM_CONN_STRING")
-
+	connString := os.Getenv("MY_SQL_CONN_STRING")
 
 	alaskalog.Logger.Infoln("Opening MySQL connection...")
 
