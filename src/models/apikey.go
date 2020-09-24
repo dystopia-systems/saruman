@@ -1,9 +1,16 @@
 package models
 
-import "gorm.io/gorm"
+import (
+	"github.com/go-sql-driver/mysql"
+	"time"
+)
 
 type ApiKey struct {
-	gorm.Model
+	ID               uint
+	CreatedAt        time.Time
+	UpdatedAt        time.Time
+	DeletedAt        mysql.NullTime
 	Key              string
 	ConfigPermission bool
+	Name             string
 }
