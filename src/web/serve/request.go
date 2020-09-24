@@ -20,11 +20,11 @@ func SetupRoutes() *mux.Router{
 }
 
 func registerGETRoutes(api *mux.Router) {
-
 	alaskalog.Logger.Infoln("Registering GET route/handler mapping...")
+
 	for route, handleFunc := range routes.GETRoutesMap {
 		finalHandler := http.HandlerFunc(handleFunc)
-		alaskalog.Logger.Infof("Registering route:%s.", route)
+		alaskalog.Logger.Infof("Registering route:%s", route)
 		api.Handle(route,
 			middleware.VerifyContentType(
 				middleware.AuthorizeApiKey(finalHandler)))
@@ -32,6 +32,8 @@ func registerGETRoutes(api *mux.Router) {
 }
 
 func registerPOSTRoutes(api *mux.Router) {
+	alaskalog.Logger.Infoln("Registering POST route/handler mapping...")
+
 	for route, handleFunc := range routes.POSTRoutesMap {
 		finalHandler := http.HandlerFunc(handleFunc)
 		alaskalog.Logger.Infof("Registering route:%s", route)
