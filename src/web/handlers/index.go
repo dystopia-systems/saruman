@@ -1,7 +1,7 @@
-package receivers
+package handlers
 
 import (
-	"github.com/vectorman1/saruman/consts"
+	"github.com/vectorman1/saruman/src/consts"
 	"net/http"
 )
 

@@ -1,15 +1,16 @@
-package receivers
+package handlers
 
 import (
 	"encoding/json"
 	"github.com/gorilla/mux"
-	"github.com/vectorman1/saruman/consts"
-	"github.com/vectorman1/saruman/models"
-	"github.com/vectorman1/saruman/service"
+	"github.com/vectorman1/saruman/src/consts"
+	"github.com/vectorman1/saruman/src/models"
+	"github.com/vectorman1/saruman/src/service"
+	"github.com/vectorman1/saruman/src/web/requestmodels"
 	"net/http"
 )
 
-func ConfigHandler(w http.ResponseWriter, r *http.Request) {
+func ConfigAppGetHandler(w http.ResponseWriter, r *http.Request) {
 	pathParams := mux.Vars(r)
 
 	w.Header().Set("Content-type", "application/json")
@@ -60,4 +61,25 @@ func ConfigHandler(w http.ResponseWriter, r *http.Request) {
 		w.WriteHeader(http.StatusNotFound)
 		break
 	}
+}
+
+func ConfigPostHandler(w http.ResponseWriter, r *http.Request) {
+	var req requestmodels.CreateApiKeyRequest
+
+	err := json.NewDecoder(r.Body).Decode(&req)
+
+	if err != nil {
+		w.WriteHeader(http.StatusBadRequest)
+		return
+	}
+
+	success := service.CreateApiKey(req.Key)
+
+	if !success {
+		w.WriteHeader(http.StatusInternalServerError)
+		return
+	}
+
+	w.WriteHeader(http.StatusOK)
+	return
 }

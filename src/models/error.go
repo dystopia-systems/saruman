@@ -1,6 +1,6 @@
 package models
 
 type Error struct {
-	Code int `json:"code"`
+	Code int `json:"core"`
 	Message string `json:"message"`
 }

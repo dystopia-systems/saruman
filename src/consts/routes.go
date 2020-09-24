@@ -2,4 +2,5 @@ package consts
 
 const RedirectUrl = "https://dystopia.systems"
 const IndexUrl = "/"
-const ConfigUrl = "/config/{app-id}"
+const ConfigBaseUrl ="/config"
+const ConfigAppUrl = "/config/{app-id}"
