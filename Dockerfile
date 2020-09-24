@@ -5,7 +5,4 @@ COPY . .
 
 RUN go get -d -v ./...
 RUN go install -v ./...
-
-EXPOSE 3000
-ENTRYPOINT "saruman"
-VOLUME /var/saruman/
+ENTRYPOINT [ "/go/bin/saruman" ]
