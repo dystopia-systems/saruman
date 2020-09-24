@@ -13,19 +13,19 @@ var POSTRoutesMap = make(map[string]func(w http.ResponseWriter, r *http.Request)
 var GetRouters = [...]string {
 	consts.IndexUrl,
 	consts.ConfigAppUrl,
+	consts.ConfigBaseUrl,
 }
 
 var PostRouters = [...]string {
-	consts.ConfigBaseUrl,
 }
 
 var GetHandlers = [...]func(http.ResponseWriter, *http.Request) {
 	handlers.IndexHandler,
 	handlers.ConfigAppGetHandler,
+	handlers.ConfigBaseGetHandler,
 }
 
 var PostHandlers = [...]func(w http.ResponseWriter, r *http.Request) {
-	handlers.ConfigPostHandler,
 }
 
 func InitializeMap() {
