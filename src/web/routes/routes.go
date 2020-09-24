@@ -13,7 +13,7 @@ var POSTRoutesMap = make(map[string]func(w http.ResponseWriter, r *http.Request)
 var GetRouters = [...]string {
 	consts.IndexUrl,
 	consts.ConfigAppUrl,
-	consts.ConfigBaseUrl,
+	consts.ApiKeyBaseUrl,
 }
 
 var PostRouters = [...]string {
@@ -22,7 +22,7 @@ var PostRouters = [...]string {
 var GetHandlers = [...]func(http.ResponseWriter, *http.Request) {
 	handlers.IndexHandler,
 	handlers.ConfigAppGetHandler,
-	handlers.ConfigBaseGetHandler,
+	handlers.ApiKeyBaseGetHandler,
 }
 
 var PostHandlers = [...]func(w http.ResponseWriter, r *http.Request) {
