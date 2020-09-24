@@ -6,9 +6,6 @@ import (
 	"github.com/vectorman1/saruman/src/web/routes"
 	"github.com/vectorman1/saruman/src/web/serve"
 	"net/http"
-	"os"
-	"os/signal"
-	"syscall"
 )
 
 func main(){
@@ -29,10 +26,8 @@ func main(){
 		return
 	}
 
-	alaskalog.Logger.Fatal(http.ListenAndServe(":3000", r))
 
-	alaskalog.Logger.Infoln("Relay is now running.  Press CTRL-C to exit.")
-	sc := make(chan os.Signal, 1)
-	signal.Notify(sc, syscall.SIGINT, syscall.SIGTERM, os.Interrupt, os.Kill)
-	<-sc
+	alaskalog.Logger.Infoln("Saruman is now running. Listening on port :3000...")
+
+	alaskalog.Logger.Fatal(http.ListenAndServe(":3000", r))
 }

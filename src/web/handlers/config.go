@@ -64,6 +64,8 @@ func ConfigAppGetHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func ConfigPostHandler(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("Content-type", "application/json")
+
 	var req requestmodels.CreateApiKeyRequest
 
 	err := json.NewDecoder(r.Body).Decode(&req)
@@ -73,7 +75,7 @@ func ConfigPostHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	success := service.CreateApiKey(req.Key)
+	key, success := service.CreateApiKey(req.Key)
 
 	if !success {
 		w.WriteHeader(http.StatusInternalServerError)
@@ -81,5 +83,7 @@ func ConfigPostHandler(w http.ResponseWriter, r *http.Request) {
 	}
 
 	w.WriteHeader(http.StatusOK)
+	res, _ := json.Marshal(key)
+	_, _ = w.Write(res)
 	return
 }

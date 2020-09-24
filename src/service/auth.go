@@ -2,6 +2,7 @@ package service
 
 import (
 	"github.com/vectorman1/saruman/src/core/auth"
+	"github.com/vectorman1/saruman/src/models"
 )
 
 func VerifyApiKey(key string) bool {
@@ -14,12 +15,12 @@ func VerifyApiKey(key string) bool {
 	return true
 }
 
-func CreateApiKey(key string) bool {
-	err := auth.CreateApiKey(key)
+func CreateApiKey(key string) (*models.ApiKey, bool) {
+	apiKey, err := auth.CreateApiKey(key)
 
 	if err != nil {
-		return false
+		return nil, false
 	}
 
-	return true
+	return apiKey, true
 }
