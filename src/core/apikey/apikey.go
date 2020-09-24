@@ -1,6 +1,7 @@
-package auth
+package apikey
 
 import (
+	"github.com/google/uuid"
 	"github.com/vectorman1/alaskalog"
 	"github.com/vectorman1/saruman/src/core/db"
 	"github.com/vectorman1/saruman/src/models"
@@ -8,25 +9,31 @@ import (
 )
 
 func GetApiKey(key string) *models.ApiKey {
-	var res *models.ApiKey
+	var res []*models.ApiKey
 
 	context := db.GetDb()
 
-	context.First(&models.ApiKey{Key: key})
+	context.Find(&res)
+
+	for _, apiKey := range res {
+		if apiKey.Key == key {
+			return apiKey
+		}
+	}
 
 	if context.Error != nil {
 		alaskalog.Logger.Warnf("Failed to execute query %v", context.Error)
 		return &models.ApiKey{}
 	}
 
-	return res
+	return nil
 }
 
-func CreateApiKey(key string) (*models.ApiKey, error) {
+func CreateApiKey() (*models.ApiKey, error) {
 	context := db.GetDb()
 
 	apiKey := models.ApiKey{
-		Key:              key,
+		Key:              uuid.New().String(),
 		ConfigPermission: false,
 		CreatedAt: time.Now(),
 		UpdatedAt: time.Now(),
