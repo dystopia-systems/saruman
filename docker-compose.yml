@@ -31,7 +31,7 @@ services:
   adminer:
     image: adminer
     container_name: saruman-adminer
-    hostname: saruman-arminer
+    hostname: saruman-adminer
     depends_on:
       - "db"
     restart: always
