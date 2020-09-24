@@ -10,9 +10,8 @@ import (
 
 func main(){
 	routes.InitializeMap()
-
-	r := serve.SetupRoutes()
 	dbErr := db.InitDb()
+	r := serve.SetupRoutes()
 
 	if dbErr != nil {
 		alaskalog.Logger.Fatalf("Failed to init db. %v", dbErr)
