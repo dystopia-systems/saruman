@@ -2,11 +2,11 @@ package handlers
 
 import (
 	"encoding/json"
+	"fmt"
 	"github.com/gorilla/mux"
 	"github.com/vectorman1/saruman/src/consts"
 	"github.com/vectorman1/saruman/src/models"
 	"github.com/vectorman1/saruman/src/service"
-	"github.com/vectorman1/saruman/src/web/requestmodels"
 	"net/http"
 )
 
@@ -31,12 +31,12 @@ func ConfigAppGetHandler(w http.ResponseWriter, r *http.Request) {
 		if err != nil {
 			w.WriteHeader(http.StatusInternalServerError)
 
-			errbytes, _ := json.Marshal(models.Error{
+			errBytes, _ := json.Marshal(models.Error{
 				Code:    http.StatusInternalServerError,
-				Message: "Error reading config.",
+				Message: fmt.Sprintf("Error reading config. %v", err),
 			})
 
-			_,_ = w.Write(errbytes)
+			_,_ = w.Write(errBytes)
 
 			return
 		}
@@ -50,6 +50,8 @@ func ConfigAppGetHandler(w http.ResponseWriter, r *http.Request) {
 
 		if err != nil {
 			w.WriteHeader(http.StatusInternalServerError)
+			errBytes, _ := json.Marshal(err)
+			_, _ = w.Write(errBytes)
 			return
 		}
 
@@ -61,29 +63,4 @@ func ConfigAppGetHandler(w http.ResponseWriter, r *http.Request) {
 		w.WriteHeader(http.StatusNotFound)
 		break
 	}
-}
-
-func ConfigPostHandler(w http.ResponseWriter, r *http.Request) {
-	w.Header().Set("Content-type", "application/json")
-
-	var req requestmodels.CreateApiKeyRequest
-
-	err := json.NewDecoder(r.Body).Decode(&req)
-
-	if err != nil {
-		w.WriteHeader(http.StatusBadRequest)
-		return
-	}
-
-	key, success := service.CreateApiKey(req.Key)
-
-	if !success {
-		w.WriteHeader(http.StatusInternalServerError)
-		return
-	}
-
-	w.WriteHeader(http.StatusOK)
-	res, _ := json.Marshal(key)
-	_, _ = w.Write(res)
-	return
 }
