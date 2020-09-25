@@ -51,15 +51,6 @@ func ConfigAppPostHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	_, err := service.ReadFile(fmt.Sprintf("%s/%s.json",consts.CONFIG_STORE_PATH, appId))
-
-	if err == nil {
-		w.WriteHeader(http.StatusConflict)
-		res, _ := json.Marshal(models.Error{Code: http.StatusConflict, Message: "App-id already exists!"})
-		_, _ = w.Write(res)
-		return
-	}
-
 	bodyBytes, _ := ioutil.ReadAll(r.Body)
 
 	success, err := service.WriteFile(fmt.Sprintf("%s/%s.json", consts.CONFIG_STORE_PATH, appId), bodyBytes)
