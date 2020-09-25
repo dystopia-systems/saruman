@@ -1,19 +1,18 @@
-version: '3.8'
+version: '3.3'
 
 services:
   db:
     image: mariadb
+    restart: always
     hostname: saruman-db
     container_name: saruman-db
     command: --default-authentication-plugin=mysql_native_password
-    restart: always
     environment:
-      MYSQL_USER: ${MYSQL_USER}
-      MYSQL_PASSOWRD: ${MYSQL_PASSWORD}
       MYSQL_DATABASE: saruman
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
 
-  web:
+  api:
+    restart: always
     container_name: saruman-api
     hostname: saruman-api
     depends_on:
@@ -25,15 +24,15 @@ services:
     volumes:
       - .:/docker-mnt/saruman/api
     environment:
-      - MY_SQL_CONN_STRING=${MY_SQL_GORM_CONN_STRING}
+      - MYSQL_CONN_STRING=${MYSQL_CONN_STRING}
       - PATH=/conf/bin:${PATH}
 
   adminer:
     image: adminer
+    restart: always
     container_name: saruman-adminer
     hostname: saruman-adminer
     depends_on:
       - "db"
-    restart: always
     ports:
       - "3001:8080"
