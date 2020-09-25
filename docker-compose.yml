@@ -25,7 +25,6 @@ services:
       - .:/docker-mnt/saruman/api
     environment:
       - MYSQL_CONN_STRING=${MYSQL_CONN_STRING}
-      - PATH=/conf/bin:${PATH}
 
   adminer:
     image: adminer
