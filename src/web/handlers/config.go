@@ -19,48 +19,21 @@ func ConfigAppGetHandler(w http.ResponseWriter, r *http.Request) {
 
 	if appId == "" {
 		w.WriteHeader(http.StatusBadRequest)
-		res, _ := json.Marshal(models.Error{Code: http.StatusBadRequest, Message: "Invalid app-id provided"})
+		res, _ := json.Marshal(models.Error{Code: http.StatusBadRequest, Message: "Provide app-id"})
 		_, _ = w.Write(res)
 		return
 	}
 
-	switch appId {
-	case "gosniff":
-		res, err := service.ReadFile(consts.GOSNIFF_CONFIG_PATH)
+	bytes, err := service.ReadFile(fmt.Sprintf("%s/%s.json",consts.CONFIG_STORE_PATH, appId))
 
-		if err != nil {
-			w.WriteHeader(http.StatusInternalServerError)
-
-			errBytes, _ := json.Marshal(models.Error{
-				Code:    http.StatusInternalServerError,
-				Message: fmt.Sprintf("Error reading config. %v", err),
-			})
-
-			_,_ = w.Write(errBytes)
-
-			return
-		}
-
-		w.WriteHeader(http.StatusOK)
-		_, _ = w.Write(res)
-
-		break
-	case "einstein":
-		res, err := service.ReadFile(consts.EINSTEIN_CONFIG_PATH)
-
-		if err != nil {
-			w.WriteHeader(http.StatusInternalServerError)
-			errBytes, _ := json.Marshal(err)
-			_, _ = w.Write(errBytes)
-			return
-		}
-
-		w.WriteHeader(http.StatusOK)
-		_, _ = w.Write(res)
-
-		break
-	default:
+	if err != nil {
 		w.WriteHeader(http.StatusNotFound)
-		break
+		res, _ := json.Marshal(models.Error{Code: http.StatusNotFound, Message: fmt.Sprintf("%v", err)})
+		_, _ = w.Write(res)
+		return
 	}
+
+	w.WriteHeader(http.StatusOK)
+	_, _ = w.Write(bytes)
+	return
 }
