@@ -13,3 +13,13 @@ func ReadFile(path string) ([]byte, error) {
 
 	return file, nil
 }
+
+func WriteFile(path string, content []byte) (bool, error) {
+	err := ioutil.WriteFile(path, content, 0644)
+
+	if err != nil {
+		return false, err
+	}
+
+	return true, nil
+}
