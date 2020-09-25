@@ -17,6 +17,7 @@ var GetRouters = [...]string {
 }
 
 var PostRouters = [...]string {
+	consts.ConfigAppUrl,
 }
 
 var GetHandlers = [...]func(http.ResponseWriter, *http.Request) {
@@ -26,6 +27,7 @@ var GetHandlers = [...]func(http.ResponseWriter, *http.Request) {
 }
 
 var PostHandlers = [...]func(w http.ResponseWriter, r *http.Request) {
+	handlers.ConfigAppPostHandler,
 }
 
 func InitializeMap() {
