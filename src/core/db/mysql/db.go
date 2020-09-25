@@ -1,4 +1,4 @@
-package db
+package mysql
 
 import (
 	"github.com/vectorman1/alaskalog"
@@ -10,7 +10,7 @@ import "gorm.io/gorm"
 var _db *gorm.DB
 
 func InitDb() error {
-	connString := os.Getenv("MY_SQL_CONN_STRING")
+	connString := os.Getenv("MYSQL_CONN_STRING")
 
 	alaskalog.Logger.Infoln("Opening MySQL connection...")
 

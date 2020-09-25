@@ -1,9 +1,8 @@
-package apikey
+package mysql
 
 import (
 	"github.com/google/uuid"
 	"github.com/vectorman1/alaskalog"
-	"github.com/vectorman1/saruman/src/core/db"
 	"github.com/vectorman1/saruman/src/models"
 	"time"
 )
@@ -11,7 +10,7 @@ import (
 func GetApiKey(key string) *models.ApiKey {
 	var res []*models.ApiKey
 
-	context := db.GetDb()
+	context := GetDb()
 
 	context.Find(&res)
 
@@ -30,7 +29,7 @@ func GetApiKey(key string) *models.ApiKey {
 }
 
 func CreateApiKey() (*models.ApiKey, error) {
-	context := db.GetDb()
+	context := GetDb()
 
 	apiKey := models.ApiKey{
 		Key:              uuid.New().String(),

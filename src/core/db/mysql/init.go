@@ -1,4 +1,4 @@
-package db
+package mysql
 
 import (
 	"github.com/vectorman1/alaskalog"
