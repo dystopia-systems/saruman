@@ -1,30 +1,36 @@
 package main
 
 import (
+	"context"
 	"github.com/vectorman1/alaskalog"
-	"github.com/vectorman1/saruman/src/core/db"
+	"github.com/vectorman1/saruman/src/core/db/mysql"
 	"github.com/vectorman1/saruman/src/web/routes"
 	"github.com/vectorman1/saruman/src/web/serve"
+	"golang.org/x/sync/errgroup"
 	"net/http"
 )
 
 func main(){
 	routes.InitializeMap()
-	dbErr := db.InitDb()
 	r := serve.SetupRoutes()
 
-	if dbErr != nil {
-		alaskalog.Logger.Fatalf("Failed to init db. %v", dbErr)
+	g, _ := errgroup.WithContext(context.Background())
+
+	g.Go(mysql.InitDb)
+
+	err := g.Wait()
+
+	if err != nil {
+		alaskalog.Logger.Fatalf("Failed to init db. %v", err)
 		return
 	}
 
-	migrationErr := db.InitMigration()
+	migrationErr := mysql.InitMigration()
 
 	if migrationErr != nil {
-		alaskalog.Logger.Fatalf("Failed to migrate db. %v", dbErr)
+		alaskalog.Logger.Fatalf("Failed to migrate db. %v", migrationErr)
 		return
 	}
-
 
 	alaskalog.Logger.Infoln("Saruman is now running. Listening on port :3000...")
 
