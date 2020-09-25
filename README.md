@@ -2,6 +2,11 @@
 
 An api primarily currently aimed at serving config files for various other apps. 
 
-Requires `MY_SQL_GORM_CONN_STRING`.
+ENV variables required:
+ - `MYSQL_CONN_STRING`
+ - `MYSQL_ROOT_PASSWORD`
+ - `MYSQL_DATABASE`
+
+Requires .
 
 Read more [here.](https://gorm.io/docs/connecting_to_the_database.html#MySQL)
