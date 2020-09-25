@@ -22,7 +22,7 @@ services:
     ports:
       - "3000:3000"
     volumes:
-      - .:/docker-mnt/saruman/api
+      - /docker-mnt/saruman-api:/go
     environment:
       - MYSQL_CONN_STRING=${MYSQL_CONN_STRING}
 
