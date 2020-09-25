@@ -27,7 +27,7 @@ func registerGETRoutes(api *mux.Router) {
 		alaskalog.Logger.Infof("Registering route:%s", route)
 		api.Handle(route,
 			middleware.VerifyContentType(
-				middleware.AuthorizeApiKey(finalHandler)))
+				middleware.AuthorizeApiKey(finalHandler))).Methods(http.MethodGet)
 	}
 }
 
@@ -39,6 +39,6 @@ func registerPOSTRoutes(api *mux.Router) {
 		alaskalog.Logger.Infof("Registering route:%s", route)
 		api.Handle(route,
 			middleware.VerifyContentType(
-				middleware.AuthorizeApiKey(finalHandler)))
+				middleware.AuthorizeApiKey(finalHandler))).Methods(http.MethodPost)
 	}
 }
