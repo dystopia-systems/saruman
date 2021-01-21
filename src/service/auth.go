@@ -1,8 +1,8 @@
 package service
 
 import (
-	"github.com/vectorman1/saruman/src/core/db/mysql"
-	"github.com/vectorman1/saruman/src/models"
+	"saruman/src/core/db/mysql"
+	"saruman/src/models"
 )
 
 func VerifyApiKey(key string) bool {

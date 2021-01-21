@@ -5,11 +5,11 @@ import (
 	"encoding/json"
 	"fmt"
 	"github.com/alexedwards/scs/v2"
-	"github.com/vectorman1/saruman/src"
-	"github.com/vectorman1/saruman/src/models"
-	"github.com/vectorman1/saruman/src/service"
 	"math/rand"
 	"net/http"
+	"saruman/src"
+	"saruman/src/models"
+	"saruman/src/service"
 )
 
 func EveEsiGetCallback(w http.ResponseWriter, r *http.Request, s *scs.SessionManager) {

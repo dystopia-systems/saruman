@@ -1,9 +1,9 @@
 package mysql
 
 import (
+	"github.com/dystopia-systems/alaskalog"
 	"github.com/google/uuid"
-	"github.com/vectorman1/alaskalog"
-	"github.com/vectorman1/saruman/src/models"
+	"saruman/src/models"
 	"time"
 )
 

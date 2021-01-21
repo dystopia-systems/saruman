@@ -1,15 +1,16 @@
 package main
 
 import (
+	"context"
 	"github.com/alexedwards/scs/v2"
-	"github.com/vectorman1/alaskalog"
-	"github.com/vectorman1/saruman/src/core/db"
-	"github.com/vectorman1/saruman/src/infrastructure/eveesi"
-	"github.com/vectorman1/saruman/src/service"
-	"github.com/vectorman1/saruman/src/web/routes"
-	"github.com/vectorman1/saruman/src/web/serve"
+	"github.com/dystopia-systems/alaskalog"
 	"golang.org/x/sync/errgroup"
 	"net/http"
+	"saruman/src/core/db/mysql"
+	"saruman/src/infrastructure/eveesi"
+	"saruman/src/service"
+	"saruman/src/web/routes"
+	"saruman/src/web/serve"
 	"time"
 )
 
@@ -22,7 +23,12 @@ func main(){
 
 	routes.InitializeRouteMappings()
 
-	dbErr := db.InitDb()
+	dbErr := mysql.InitDb()
+
+	if dbErr != nil {
+		alaskalog.Logger.Fatalln("Failed to initialize db.")
+	}
+
 	mux := serve.SetupRoutes()
 
 	g, _ := errgroup.WithContext(context.Background())

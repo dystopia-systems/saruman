@@ -2,18 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5f6f3ec0-2f7e-41fe-83db-d5c243050c64" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/appcontext.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/infrastructure/eveesi/client.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/web/handlers/eveesi.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/saruman.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/saruman.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/consts/paths.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/consts/paths.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/consts/routes.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/consts/routes.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/service/config.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/config.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/db/mysql/apikey.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/db/mysql/apikey.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/db/mysql/db.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/db/mysql/db.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/db/mysql/init.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/db/mysql/init.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/infrastructure/eveesi/client.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/infrastructure/eveesi/client.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/service/auth.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/auth.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/web/handlers/apikey.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/web/handlers/apikey.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/web/handlers/config.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/web/handlers/config.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/web/handlers/eveesi.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/web/handlers/eveesi.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/web/handlers/index.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/web/handlers/index.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/web/middleware/middleware.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/web/middleware/middleware.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/web/routes/routes.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/web/routes/routes.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/web/serve/request.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/web/serve/request.go" afterDir="false" />
     </list>
@@ -68,8 +70,8 @@
       <recent name="D:\saruman\receivers" />
     </key>
   </component>
-  <component name="RunManager" selected="Go Build.go build github.com/vectorman1/saruman">
-    <configuration name="go build github.com/vectorman1/saruman" type="GoApplicationRunConfiguration" factoryName="Go Application" nameIsGenerated="true">
+  <component name="RunManager" selected="Go Build.go build saruman">
+    <configuration name="go build saruman" type="GoApplicationRunConfiguration" factoryName="Go Application">
       <module name="saruman" />
       <working_directory value="$PROJECT_DIR$" />
       <go_parameters value="-i" />
@@ -84,7 +86,7 @@
       </envs>
       <kind value="PACKAGE" />
       <filePath value="$PROJECT_DIR$" />
-      <package value="github.com/vectorman1/saruman" />
+      <package value="saruman" />
       <directory value="$PROJECT_DIR$" />
       <method v="2" />
     </configuration>
@@ -163,7 +165,7 @@
     <list>
       <item itemvalue="Docker.Docker compose deploy" />
       <item itemvalue="Docker.Unnamed" />
-      <item itemvalue="Go Build.go build github.com/vectorman1/saruman" />
+      <item itemvalue="Go Build.go build saruman" />
     </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -179,135 +181,18 @@
     <integration-enabled>true</integration-enabled>
   </component>
   <component name="WindowStateProjectService">
-    <state x="2672" y="358" key="#Go_Modules" timestamp="1600785736844">
-      <screen x="1920" y="0" width="1920" height="1050" />
-    </state>
-    <state x="2672" y="358" key="#Go_Modules/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1600785736844" />
-    <state x="711" y="349" key="#Notifications" timestamp="1600939092738">
+    <state x="724" y="233" width="471" height="600" key="#Build_Tags_&amp;_Vendoring" timestamp="1611245460323">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="711" y="349" key="#Notifications/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1600939092738" />
-    <state x="533" y="126" width="1092" height="834" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1601658090782">
+    <state x="724" y="233" width="471" height="600" key="#Build_Tags_&amp;_Vendoring/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1611245460323" />
+    <state x="414" y="180" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1611245721312">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="533" y="126" width="1092" height="714" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1601658090782" />
-    <state x="2748" y="216" width="1092" height="834" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1601643301068" />
-    <state x="725" y="327" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1601635403546">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state x="725" y="327" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1601635403546" />
-    <state x="2645" y="327" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1600903219457" />
-    <state x="743" y="231" key="#com.intellij.ide.util.MemberChooser" timestamp="1600945820829">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state x="743" y="231" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1600945820829" />
-    <state x="2663" y="231" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1600900929081" />
-    <state x="2610" y="272" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1600948672218">
-      <screen x="1920" y="0" width="1920" height="1050" />
-    </state>
-    <state x="2610" y="272" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1600948672218" />
-    <state x="2505" y="93" key="CommitChangelistDialog2" timestamp="1600879195559">
-      <screen x="1920" y="0" width="1920" height="1050" />
-    </state>
-    <state x="2505" y="93" key="CommitChangelistDialog2/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1600879195559" />
-    <state width="1450" height="466" key="DebuggerActiveHint" timestamp="1601658437245">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state width="1450" height="466" key="DebuggerActiveHint/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1601658437245" />
-    <state width="871" height="466" key="DebuggerActiveHint/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1600908290396" />
-    <state x="798" y="405" key="DockerComposeFileDialog" timestamp="1600940632932">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state x="798" y="405" key="DockerComposeFileDialog/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1600940632932" />
-    <state x="785" y="419" width="1100" height="619" key="EnvironmentVariablesDialog" timestamp="1601658089199">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state x="785" y="419" width="721" height="487" key="EnvironmentVariablesDialog/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1601658089199" />
-    <state x="2483" y="296" width="1100" height="619" key="EnvironmentVariablesDialog/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1601643299966" />
+    <state x="414" y="180" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1611245721312" />
     <state x="740" y="280" key="FileChooserDialogImpl" timestamp="1603897988507">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="740" y="280" key="FileChooserDialogImpl/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1603897988507" />
-    <state x="2660" y="280" key="FileChooserDialogImpl/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1600880313958" />
-    <state x="2758" y="423" key="Github.ShareDialog" timestamp="1600786045970">
-      <screen x="1920" y="0" width="1920" height="1050" />
-    </state>
-    <state x="2758" y="423" key="Github.ShareDialog/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1600786045970" />
-    <state x="2759" y="230" key="Github.UntrackedFilesDialog" timestamp="1600786050675">
-      <screen x="1920" y="0" width="1920" height="1050" />
-    </state>
-    <state x="2759" y="230" key="Github.UntrackedFilesDialog/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1600786050675" />
-    <state width="1877" height="285" key="GridCell.Tab.0.bottom" timestamp="1601659397937">
-      <screen x="1920" y="0" width="1920" height="1050" />
-    </state>
-    <state width="1877" height="433" key="GridCell.Tab.0.bottom/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1601658905982" />
-    <state width="1877" height="285" key="GridCell.Tab.0.bottom/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1601659397937" />
-    <state width="1877" height="285" key="GridCell.Tab.0.center" timestamp="1601659397937">
-      <screen x="1920" y="0" width="1920" height="1050" />
-    </state>
-    <state width="1877" height="433" key="GridCell.Tab.0.center/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1601658905982" />
-    <state width="1877" height="285" key="GridCell.Tab.0.center/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1601659397937" />
-    <state width="1877" height="285" key="GridCell.Tab.0.left" timestamp="1601659397937">
-      <screen x="1920" y="0" width="1920" height="1050" />
-    </state>
-    <state width="1877" height="433" key="GridCell.Tab.0.left/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1601658905982" />
-    <state width="1877" height="285" key="GridCell.Tab.0.left/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1601659397937" />
-    <state width="1877" height="285" key="GridCell.Tab.0.right" timestamp="1601659397937">
-      <screen x="1920" y="0" width="1920" height="1050" />
-    </state>
-    <state width="1877" height="433" key="GridCell.Tab.0.right/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1601658905982" />
-    <state width="1877" height="285" key="GridCell.Tab.0.right/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1601659397937" />
-    <state width="1877" height="217" key="GridCell.Tab.1.bottom" timestamp="1601659385267">
-      <screen x="1920" y="0" width="1920" height="1050" />
-    </state>
-    <state width="1877" height="433" key="GridCell.Tab.1.bottom/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1601658906409" />
-    <state width="1877" height="217" key="GridCell.Tab.1.bottom/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1601659385267" />
-    <state width="1877" height="217" key="GridCell.Tab.1.center" timestamp="1601659385267">
-      <screen x="1920" y="0" width="1920" height="1050" />
-    </state>
-    <state width="1877" height="433" key="GridCell.Tab.1.center/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1601658906409" />
-    <state width="1877" height="217" key="GridCell.Tab.1.center/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1601659385267" />
-    <state width="1877" height="217" key="GridCell.Tab.1.left" timestamp="1601659385267">
-      <screen x="1920" y="0" width="1920" height="1050" />
-    </state>
-    <state width="1877" height="433" key="GridCell.Tab.1.left/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1601658906409" />
-    <state width="1877" height="217" key="GridCell.Tab.1.left/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1601659385267" />
-    <state width="1877" height="217" key="GridCell.Tab.1.right" timestamp="1601659385267">
-      <screen x="1920" y="0" width="1920" height="1050" />
-    </state>
-    <state width="1877" height="433" key="GridCell.Tab.1.right/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1601658906409" />
-    <state width="1877" height="217" key="GridCell.Tab.1.right/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1601659385267" />
-    <state width="196" height="457" key="HiddenNamespacesPopup" timestamp="1600938838155">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state width="196" height="457" key="HiddenNamespacesPopup/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1600938838155" />
-    <state x="461" y="0" width="998" height="884" key="SettingsEditor" timestamp="1600958966517">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state x="461" y="0" width="998" height="884" key="SettingsEditor/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1600958966517" />
-    <state x="2381" y="0" key="SettingsEditor/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1600879398885" />
-    <state x="2472" y="258" key="Vcs.Push.Dialog.v2" timestamp="1600879202827">
-      <screen x="1920" y="0" width="1920" height="1050" />
-    </state>
-    <state x="2472" y="258" key="Vcs.Push.Dialog.v2/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1600879202827" />
-    <state width="968" height="533" key="XDebugger.FullValuePopup" timestamp="1601658107869">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state width="968" height="533" key="XDebugger.FullValuePopup/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1601658107869" />
-    <state x="954" y="571" width="523" height="207" key="com.intellij.docker.deployment.ui.DockerPortBindingsField.v173.dialogSize" timestamp="1600938958451">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state x="954" y="571" key="com.intellij.docker.deployment.ui.DockerPortBindingsField.v173.dialogSize/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1600938958451" />
-    <state x="2874" y="571" width="523" height="207" key="com.intellij.docker.deployment.ui.DockerPortBindingsField.v173.dialogSize/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1600880271153" />
-    <state x="778" y="577" width="697" height="236" key="com.intellij.docker.deployment.ui.DockerVolumeBindingsField.v173.dialogSize" timestamp="1600939137925">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state x="778" y="577" key="com.intellij.docker.deployment.ui.DockerVolumeBindingsField.v173.dialogSize/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1600939137925" />
-    <state x="2698" y="577" width="697" height="236" key="com.intellij.docker.deployment.ui.DockerVolumeBindingsField.v173.dialogSize/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1600880391900" />
-    <state x="2543" y="227" width="672" height="678" key="search.everywhere.popup" timestamp="1601636807910">
-      <screen x="1920" y="0" width="1920" height="1050" />
-    </state>
-    <state x="2543" y="227" width="672" height="678" key="search.everywhere.popup/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1601636807910" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -1,8 +1,8 @@
 package mysql
 
 import (
-	"github.com/vectorman1/alaskalog"
-	"github.com/vectorman1/saruman/src/models"
+	"github.com/dystopia-systems/alaskalog"
+	"saruman/src/models"
 )
 
 func InitMigration() error {

@@ -2,9 +2,9 @@ package eveesi
 
 import (
 	"github.com/antihax/goesi"
-	"github.com/vectorman1/saruman/src"
-	"github.com/vectorman1/saruman/src/service"
 	"net/http"
+	"saruman/src"
+	"saruman/src/service"
 )
 
 func InitClient() {

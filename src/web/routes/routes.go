@@ -2,10 +2,10 @@ package routes
 
 import (
 	"github.com/alexedwards/scs/v2"
-	"github.com/vectorman1/alaskalog"
-	"github.com/vectorman1/saruman/src/consts"
-	"github.com/vectorman1/saruman/src/web/handlers"
+	"github.com/dystopia-systems/alaskalog"
 	"net/http"
+	"saruman/src/consts"
+	"saruman/src/web/handlers"
 )
 
 var postPublicRoutes []string

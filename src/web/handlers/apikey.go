@@ -3,8 +3,8 @@ package handlers
 import (
 	"encoding/json"
 	"github.com/alexedwards/scs/v2"
-	"github.com/vectorman1/saruman/src/service"
 	"net/http"
+	"saruman/src/service"
 )
 
 func ApiKeyBaseGetHandler(w http.ResponseWriter, r *http.Request, s *scs.SessionManager) {

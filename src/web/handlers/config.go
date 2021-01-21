@@ -5,11 +5,10 @@ import (
 	"fmt"
 	"github.com/alexedwards/scs/v2"
 	"github.com/gorilla/mux"
-	"github.com/vectorman1/saruman/src/consts"
-	"github.com/vectorman1/saruman/src/models"
-	"github.com/vectorman1/saruman/src/service"
-	"io/ioutil"
 	"net/http"
+	"saruman/src/consts"
+	"saruman/src/models"
+	"saruman/src/service"
 )
 
 func ConfigAppGetHandler(w http.ResponseWriter, r *http.Request, s *scs.SessionManager) {
@@ -17,7 +16,6 @@ func ConfigAppGetHandler(w http.ResponseWriter, r *http.Request, s *scs.SessionM
 
 	w.Header().Set("Content-type", "application/json")
 
-	pathParams := mux.Vars(r)
 	appId := pathParams["app-id"]
 
 	if appId == "" {

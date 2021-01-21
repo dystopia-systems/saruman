@@ -2,11 +2,11 @@ package serve
 
 import (
 	"github.com/alexedwards/scs/v2"
+	"github.com/dystopia-systems/alaskalog"
 	"github.com/gorilla/mux"
-	"github.com/vectorman1/alaskalog"
-	"github.com/vectorman1/saruman/src/web/middleware"
-	"github.com/vectorman1/saruman/src/web/routes"
 	"net/http"
+	"saruman/src/web/middleware"
+	"saruman/src/web/routes"
 	"time"
 )
 

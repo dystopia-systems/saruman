@@ -1,7 +1,7 @@
 package mysql
 
 import (
-	"github.com/vectorman1/alaskalog"
+	"github.com/dystopia-systems/alaskalog"
 	"os"
 )
 import "gorm.io/driver/mysql"

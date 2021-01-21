@@ -1,9 +1,9 @@
 package middleware
 
 import (
-	"github.com/vectorman1/saruman/src/service"
 	"mime"
 	"net/http"
+	"saruman/src/service"
 )
 
 func AuthorizeApiKey(next http.Handler) http.Handler {
