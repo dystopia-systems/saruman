@@ -10,11 +10,8 @@ func InitMigration() error {
 
 	alaskalog.Logger.Infoln("Auto-migrating...")
 
-	err := db.AutoMigrate(&models.ApiKey{})
-
-	if err != nil {
-		return err
-	}
+	_ = db.AutoMigrate(&models.ApiKey{})
+	_ = db.AutoMigrate(&models.YahooQuote{})
 
 	return nil
 }

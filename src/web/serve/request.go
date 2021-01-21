@@ -26,6 +26,10 @@ func SetupRoutes() *mux.Router {
 	apiConfigRoute.Methods(http.MethodPost).Path(consts.IdVar).HandlerFunc(handlers.ConfigPost)
 	apiConfigRoute.Methods(http.MethodPut).Path(consts.IdVar).HandlerFunc(handlers.ConfigPut)
 
+	apiQuoteRoute := api.PathPrefix(consts.QuotePath).Subrouter()
+	yahooQuoteRoute := apiQuoteRoute.PathPrefix(consts.YahooPath).Subrouter()
+	yahooQuoteRoute.Methods(http.MethodGet).PathPrefix(consts.IdVar).HandlerFunc(handlers.QuoteYahooGet)
+
 	api.Use(middleware.AuthorizeApiKey)
 	api.Use(middleware.VerifyContentType)
 
