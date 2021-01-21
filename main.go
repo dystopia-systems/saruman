@@ -16,6 +16,7 @@ func main(){
 
 	_ = r.Walk(func(route *mux.Route, router *mux.Router, ancestors []*mux.Route) error {
 		t, perr := route.GetPathTemplate()
+		m, merr := route.GetMethods()
 
 		if perr != nil {
 			alaskalog.Logger.Warnln(perr)
@@ -23,7 +24,11 @@ func main(){
 			return perr
 		}
 
-		alaskalog.Logger.Infof("%s", t)
+		if merr != nil {
+			return nil
+		}
+
+		alaskalog.Logger.Infof("%s: %s", m, t)
 
 		return nil
 	})
