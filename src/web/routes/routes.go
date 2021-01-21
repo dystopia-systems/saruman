@@ -1,42 +1,63 @@
 package routes
 
 import (
+	"github.com/alexedwards/scs/v2"
 	"github.com/vectorman1/alaskalog"
 	"github.com/vectorman1/saruman/src/consts"
 	"github.com/vectorman1/saruman/src/web/handlers"
 	"net/http"
 )
 
-var GETRoutesMap = make(map[string]func(http.ResponseWriter, *http.Request))
-var POSTRoutesMap = make(map[string]func(w http.ResponseWriter, r *http.Request))
+var postPublicRoutes []string
+var postSecureRoutes []string
 
-var GetRouters = [...]string {
+var postPublicHandlers []func(http.ResponseWriter, *http.Request, *scs.SessionManager)
+var postSecureHandlers []func(http.ResponseWriter, *http.Request, *scs.SessionManager)
+
+var getPublicRoutes = []string {
 	consts.IndexUrl,
+	consts.EveEsiBaseUrl,
+	consts.EveEsiCallBackUrl,
+}
+var getPublicHandlers = []func(http.ResponseWriter, *http.Request, *scs.SessionManager) {
+	handlers.IndexHandler,
+	handlers.EveEsiGetBase,
+	handlers.EveEsiGetCallback,
+}
+
+var getSecureRoutes =  []string {
 	consts.ConfigAppUrl,
 	consts.ApiKeyBaseUrl,
 }
-
-var PostRouters = [...]string {
-	consts.ConfigAppUrl,
-}
-
-var GetHandlers = [...]func(http.ResponseWriter, *http.Request) {
-	handlers.IndexHandler,
+var getSecureHandlers = []func(http.ResponseWriter, *http.Request, *scs.SessionManager) {
 	handlers.ConfigAppGetHandler,
 	handlers.ApiKeyBaseGetHandler,
 }
 
-var PostHandlers = [...]func(w http.ResponseWriter, r *http.Request) {
-	handlers.ConfigAppPostHandler,
+var (
+	PostPublicMap map[string]func(http.ResponseWriter, *http.Request, *scs.SessionManager)
+	GetPublicMap  map[string]func(http.ResponseWriter, *http.Request, *scs.SessionManager)
+	PostSecureMap map[string]func(http.ResponseWriter, *http.Request, *scs.SessionManager)
+	GetSecureMap  map[string]func(http.ResponseWriter, *http.Request, *scs.SessionManager)
+)
+
+func InitializeRouteMappings() {
+	alaskalog.Logger.Infoln("Initializing route/handler mapping...")
+
+	GetSecureMap = initializeMap(getSecureRoutes, getSecureHandlers)
+	PostSecureMap = initializeMap(postSecureRoutes, postSecureHandlers)
+	GetPublicMap = initializeMap(getPublicRoutes, getPublicHandlers)
+	PostPublicMap = initializeMap(postPublicRoutes, postPublicHandlers)
 }
 
-func InitializeMap() {
-	alaskalog.Logger.Infoln("Initializing GET route/handler mapping...")
-	for i, route := range GetRouters {
-		GETRoutesMap[route] = GetHandlers[i]
+func initializeMap(
+	routes []string,
+	handlers []func(http.ResponseWriter, *http.Request, *scs.SessionManager)) map[string]func(http.ResponseWriter, *http.Request, *scs.SessionManager){
+	res := make(map[string]func(http.ResponseWriter, *http.Request, *scs.SessionManager))
+
+	for i, route := range routes {
+		res[route] = handlers[i]
 	}
-	alaskalog.Logger.Infoln("Initializing POST route/handler mapping...")
-	for i, route := range PostRouters {
-		POSTRoutesMap[route] = PostHandlers[i]
-	}
+
+	return res
 }

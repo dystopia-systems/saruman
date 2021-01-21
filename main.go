@@ -1,18 +1,29 @@
 package main
 
 import (
-	"context"
+	"github.com/alexedwards/scs/v2"
 	"github.com/vectorman1/alaskalog"
-	"github.com/vectorman1/saruman/src/core/db/mysql"
+	"github.com/vectorman1/saruman/src/core/db"
+	"github.com/vectorman1/saruman/src/infrastructure/eveesi"
+	"github.com/vectorman1/saruman/src/service"
 	"github.com/vectorman1/saruman/src/web/routes"
 	"github.com/vectorman1/saruman/src/web/serve"
 	"golang.org/x/sync/errgroup"
 	"net/http"
+	"time"
 )
 
 func main(){
-	routes.InitializeMap()
-	r := serve.SetupRoutes()
+	service.InitConfig()
+	eveesi.InitClient()
+
+	sessionManager := scs.New()
+	sessionManager.Lifetime = time.Hour
+
+	routes.InitializeRouteMappings()
+
+	dbErr := db.InitDb()
+	mux := serve.SetupRoutes()
 
 	g, _ := errgroup.WithContext(context.Background())
 
@@ -34,5 +45,5 @@ func main(){
 
 	alaskalog.Logger.Infoln("Saruman is now running. Listening on port :3000...")
 
-	alaskalog.Logger.Fatal(http.ListenAndServe(":3000", r))
+	alaskalog.Logger.Fatal(http.ListenAndServe(":3000", mux))
 }

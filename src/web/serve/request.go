@@ -1,44 +1,55 @@
 package serve
 
 import (
+	"github.com/alexedwards/scs/v2"
 	"github.com/gorilla/mux"
 	"github.com/vectorman1/alaskalog"
 	"github.com/vectorman1/saruman/src/web/middleware"
 	"github.com/vectorman1/saruman/src/web/routes"
 	"net/http"
+	"time"
 )
 
-func SetupRoutes() *mux.Router{
-	r := mux.NewRouter()
+var sessionManager *scs.SessionManager
 
-	api := r.PathPrefix("/api/v1").Subrouter()
+func SetupRoutes() *mux.Router {
+	sessionManager = scs.New()
+	sessionManager.Lifetime = time.Hour
 
-	registerGETRoutes(api)
-	registerPOSTRoutes(api)
+	alaskalog.Logger.Info("Registering public routes...")
+
+	r := mux.NewRouter().StrictSlash(false)
+
+	publicApi := r.PathPrefix("/").Subrouter()
+
+	registerRoutes(publicApi, routes.GetPublicMap, "GET")
+	registerRoutes(publicApi, routes.PostPublicMap, "POST")
+
+	alaskalog.Logger.Info("Registering secure routes...")
+
+	secureApi := r.PathPrefix("/v1/api").Subrouter()
+
+	registerRoutes(secureApi, routes.GetSecureMap, "GET")
+	registerRoutes(secureApi, routes.PostSecureMap, "POST")
+
+	secureApi.Use(middleware.AuthorizeApiKey)
+	secureApi.Use(middleware.VerifyContentType)
 
 	return r
 }
 
-func registerGETRoutes(api *mux.Router) {
-	alaskalog.Logger.Infoln("Registering GET route/handler mapping...")
+func registerRoutes(
+		r *mux.Router,
+		routes map[string]func(w http.ResponseWriter, r *http.Request, s *scs.SessionManager),
+		method string,
+) {
+	for route, handlerFunc := range routes {
+		handler := sessionManager.LoadAndSave(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+			handlerFunc(w, r, sessionManager)
+		}))
 
-	for route, handleFunc := range routes.GETRoutesMap {
-		finalHandler := http.HandlerFunc(handleFunc)
-		alaskalog.Logger.Infof("Registering route:%s", route)
-		api.Handle(route,
-			middleware.VerifyContentType(
-				middleware.AuthorizeApiKey(finalHandler))).Methods(http.MethodGet)
-	}
-}
+		alaskalog.Logger.Infof("Registering route:%s:%s", method, route)
 
-func registerPOSTRoutes(api *mux.Router) {
-	alaskalog.Logger.Infoln("Registering POST route/handler mapping...")
-
-	for route, handleFunc := range routes.POSTRoutesMap {
-		finalHandler := http.HandlerFunc(handleFunc)
-		alaskalog.Logger.Infof("Registering route:%s", route)
-		api.Handle(route,
-			middleware.VerifyContentType(
-				middleware.AuthorizeApiKey(finalHandler))).Methods(http.MethodPost)
+		r.Methods(method).Handler(handler)
 	}
 }

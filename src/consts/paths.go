@@ -1,3 +1,3 @@
 package consts
 
-const CONFIG_STORE_PATH="STORE/CONFIG"
+const CONFIG_PATH = "pub/%s.json"
