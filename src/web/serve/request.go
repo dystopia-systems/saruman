@@ -5,8 +5,8 @@ import (
 	"github.com/dystopia-systems/alaskalog"
 	"github.com/gorilla/mux"
 	"net/http"
+	"saruman/src/web/handlers"
 	"saruman/src/web/middleware"
-	"saruman/src/web/routes"
 	"time"
 )
 
@@ -16,40 +16,22 @@ func SetupRoutes() *mux.Router {
 	sessionManager = scs.New()
 	sessionManager.Lifetime = time.Hour
 
-	alaskalog.Logger.Info("Registering public routes...")
-
-	r := mux.NewRouter().StrictSlash(false)
-
-	publicApi := r.PathPrefix("/").Subrouter()
-
-	registerRoutes(publicApi, routes.GetPublicMap, "GET")
-	registerRoutes(publicApi, routes.PostPublicMap, "POST")
+	r := mux.NewRouter()
 
 	alaskalog.Logger.Info("Registering secure routes...")
 
-	secureApi := r.PathPrefix("/v1/api").Subrouter()
+	api := r.PathPrefix("/v1/api").Subrouter()
 
-	registerRoutes(secureApi, routes.GetSecureMap, "GET")
-	registerRoutes(secureApi, routes.PostSecureMap, "POST")
+	apiKeyRoute := api.PathPrefix("/api-key/")
+	apiKeyRoute.Methods(http.MethodGet).Path("/").HandlerFunc(handlers.ApiKeyBaseGetHandler)
 
-	secureApi.Use(middleware.AuthorizeApiKey)
-	secureApi.Use(middleware.VerifyContentType)
+	apiConfigRoute := api.PathPrefix("/config/")
+	apiConfigRoute.Methods(http.MethodGet).Path("/{id}/").HandlerFunc(handlers.ConfigAppGetHandler)
+	apiConfigRoute.Methods(http.MethodPost).Path("/{id}/").HandlerFunc(handlers.ConfigAppPostHandler)
+	apiConfigRoute.Methods(http.MethodPut).Path("/{id}/").HandlerFunc(handlers.ConfigAppPutHandler)
+
+	api.Use(middleware.AuthorizeApiKey)
+	api.Use(middleware.VerifyContentType)
 
 	return r
-}
-
-func registerRoutes(
-		r *mux.Router,
-		routes map[string]func(w http.ResponseWriter, r *http.Request, s *scs.SessionManager),
-		method string,
-) {
-	for route, handlerFunc := range routes {
-		handler := sessionManager.LoadAndSave(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-			handlerFunc(w, r, sessionManager)
-		}))
-
-		alaskalog.Logger.Infof("Registering route:%s:%s", method, route)
-
-		r.Methods(method).Handler(handler)
-	}
 }

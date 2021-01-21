@@ -2,12 +2,11 @@ package handlers
 
 import (
 	"encoding/json"
-	"github.com/alexedwards/scs/v2"
 	"net/http"
 	"saruman/src/service"
 )
 
-func ApiKeyBaseGetHandler(w http.ResponseWriter, r *http.Request, s *scs.SessionManager) {
+func ApiKeyBaseGetHandler(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-type", "application/json")
 
 	key, success := service.CreateApiKey()

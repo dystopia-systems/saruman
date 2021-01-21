@@ -2,20 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5f6f3ec0-2f7e-41fe-83db-d5c243050c64" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/saruman.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/saruman.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pub/test" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/db/mysql/apikey.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/db/mysql/apikey.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/db/mysql/db.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/db/mysql/db.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/db/mysql/init.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/db/mysql/init.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/infrastructure/eveesi/client.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/infrastructure/eveesi/client.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/service/auth.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/auth.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/consts/routes.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/consts/routes.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/infrastructure/eveesi/client.go" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/web/handlers/apikey.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/web/handlers/apikey.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/web/handlers/config.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/web/handlers/config.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/web/handlers/eveesi.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/web/handlers/eveesi.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/web/handlers/eveesi.go" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/web/handlers/index.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/web/handlers/index.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/web/middleware/middleware.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/web/middleware/middleware.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/web/routes/routes.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/web/routes/routes.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/web/serve/request.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/web/serve/request.go" afterDir="false" />
     </list>
@@ -76,7 +71,7 @@
       <working_directory value="$PROJECT_DIR$" />
       <go_parameters value="-i" />
       <envs>
-        <env name="MY_SQL_CONN_STRING" value="harb:HueHue123@tcp(127.0.0.1:3306)/saruman?charset=utf8mb4&amp;parseTime=True&amp;loc=Local" />
+        <env name="MYSQL_CONN_STRING" value="harb:HueHue123@tcp(127.0.0.1:3306)/saruman?charset=utf8mb4&amp;parseTime=True&amp;loc=Local" />
         <env name="EVE_ESI_CLIENT_ID" value="aa66120a97504f9fbcaba26c3d70322d" />
         <env name="EVE_ESI_SECRET_KEY" value="xtdfonVSf8KdQ1lZw252hnoD23r06fKJWBLmVhv8" />
         <env name="EVE_ESI_CALLBACK_URL" value="http://localhost:3000/eve-esi/auth/callback" />
@@ -185,37 +180,71 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="724" y="233" width="471" height="600" key="#Build_Tags_&amp;_Vendoring/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1611245460323" />
-    <state x="414" y="180" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1611245721312">
+    <state x="362" y="229" width="1092" height="688" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1611245953690">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="414" y="180" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1611245721312" />
+    <state x="362" y="229" width="1092" height="688" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1611245953690" />
+    <state x="735" y="327" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1611245987879">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="735" y="327" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1611245987879" />
+    <state width="717" height="466" key="DebuggerActiveHint" timestamp="1611247097759">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="717" height="466" key="DebuggerActiveHint/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1611247097759" />
+    <state x="775" y="328" width="617" height="489" key="EnvironmentVariablesDialog" timestamp="1611245952196">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="775" y="328" width="617" height="489" key="EnvironmentVariablesDialog/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1611245952196" />
     <state x="740" y="280" key="FileChooserDialogImpl" timestamp="1603897988507">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="740" y="280" key="FileChooserDialogImpl/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1603897988507" />
+    <state width="1877" height="285" key="GridCell.Tab.0.bottom" timestamp="1611248056838">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1877" height="285" key="GridCell.Tab.0.bottom/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1611248056838" />
+    <state width="1877" height="285" key="GridCell.Tab.0.center" timestamp="1611248056838">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1877" height="285" key="GridCell.Tab.0.center/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1611248056838" />
+    <state width="1877" height="285" key="GridCell.Tab.0.left" timestamp="1611248056838">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1877" height="285" key="GridCell.Tab.0.left/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1611248056838" />
+    <state width="1877" height="285" key="GridCell.Tab.0.right" timestamp="1611248056838">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1877" height="285" key="GridCell.Tab.0.right/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1611248056838" />
+    <state width="1877" height="342" key="GridCell.Tab.1.bottom" timestamp="1611248021513">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1877" height="342" key="GridCell.Tab.1.bottom/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1611248021513" />
+    <state width="1877" height="342" key="GridCell.Tab.1.center" timestamp="1611248021513">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1877" height="342" key="GridCell.Tab.1.center/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1611248021513" />
+    <state width="1877" height="342" key="GridCell.Tab.1.left" timestamp="1611248021513">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1877" height="342" key="GridCell.Tab.1.left/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1611248021513" />
+    <state width="1877" height="342" key="GridCell.Tab.1.right" timestamp="1611248021513">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1877" height="342" key="GridCell.Tab.1.right/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1611248021513" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
           <url>file://$PROJECT_DIR$/src/web/handlers/index.go</url>
-          <line>9</line>
+          <line>8</line>
           <option name="timeStamp" value="15" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/src/web/handlers/eveesi.go</url>
-          <line>75</line>
-          <option name="timeStamp" value="21" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/src/web/handlers/eveesi.go</url>
+          <url>file://$PROJECT_DIR$/src/web/handlers/config.go</url>
           <line>16</line>
-          <option name="timeStamp" value="22" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/src/web/serve/request.go</url>
-          <line>37</line>
-          <option name="timeStamp" value="24" />
+          <option name="timeStamp" value="28" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

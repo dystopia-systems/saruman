@@ -7,7 +7,6 @@ import (
 	"golang.org/x/sync/errgroup"
 	"net/http"
 	"saruman/src/core/db/mysql"
-	"saruman/src/infrastructure/eveesi"
 	"saruman/src/service"
 	"saruman/src/web/routes"
 	"saruman/src/web/serve"
@@ -16,7 +15,6 @@ import (
 
 func main(){
 	service.InitConfig()
-	eveesi.InitClient()
 
 	sessionManager := scs.New()
 	sessionManager.Lifetime = time.Hour

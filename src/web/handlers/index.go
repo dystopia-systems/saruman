@@ -1,11 +1,10 @@
 package handlers
 
 import (
-	"github.com/alexedwards/scs/v2"
 	"net/http"
 	"saruman/src/consts"
 )
 
-func IndexHandler(w http.ResponseWriter, r *http.Request, s *scs.SessionManager)  {
+func IndexHandler(w http.ResponseWriter, r *http.Request)  {
 	http.Redirect(w, r, consts.RedirectUrl, http.StatusMovedPermanently)
 }
