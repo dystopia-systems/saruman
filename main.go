@@ -2,24 +2,16 @@ package main
 
 import (
 	"context"
-	"github.com/alexedwards/scs/v2"
 	"github.com/dystopia-systems/alaskalog"
 	"golang.org/x/sync/errgroup"
 	"net/http"
 	"saruman/src/core/db/mysql"
 	"saruman/src/service"
-	"saruman/src/web/routes"
 	"saruman/src/web/serve"
-	"time"
 )
 
 func main(){
 	service.InitConfig()
-
-	sessionManager := scs.New()
-	sessionManager.Lifetime = time.Hour
-
-	routes.InitializeRouteMappings()
 
 	dbErr := mysql.InitDb()
 
