@@ -5,6 +5,6 @@ import (
 	"saruman/src/consts"
 )
 
-func IndexHandler(w http.ResponseWriter, r *http.Request)  {
+func IndexGet(w http.ResponseWriter, r *http.Request)  {
 	http.Redirect(w, r, consts.RedirectUrl, http.StatusMovedPermanently)
 }

@@ -2,8 +2,6 @@ package service
 
 import (
 	"io/ioutil"
-	"os"
-	"strings"
 )
 
 type Config struct {
@@ -36,17 +34,17 @@ func WriteFile(path string, content []byte) (bool, error) {
 	return true, nil
 }
 
-func InitConfig() {
-	scopes := strings.Split(os.Getenv("EVE_ESI_SCOPES"), ",")
-
-	_config = &Config{
-		ClientID:  os.Getenv("EVE_ESI_CLIENT_ID"),
-		SecretKey: os.Getenv("EVE_ESI_SECRET_KEY"),
-		Scopes:    scopes,
-		RedirectUrl: os.Getenv("EVE_ESI_REDIRECT_URL"),
-		UserAgent: os.Getenv("EVE_ESI_USERAGENT"),
-	}
-}
+//func InitConfig() {
+//	scopes := strings.Split(os.Getenv("EVE_ESI_SCOPES"), ",")
+//
+//	_config = &Config{
+//		ClientID:  os.Getenv("EVE_ESI_CLIENT_ID"),
+//		SecretKey: os.Getenv("EVE_ESI_SECRET_KEY"),
+//		Scopes:    scopes,
+//		RedirectUrl: os.Getenv("EVE_ESI_REDIRECT_URL"),
+//		UserAgent: os.Getenv("EVE_ESI_USERAGENT"),
+//	}
+//}
 
 func GetConfig() *Config {
 	return _config

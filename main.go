@@ -3,23 +3,30 @@ package main
 import (
 	"context"
 	"github.com/dystopia-systems/alaskalog"
+	"github.com/gorilla/mux"
 	"golang.org/x/sync/errgroup"
 	"net/http"
 	"saruman/src/core/db/mysql"
-	"saruman/src/service"
 	"saruman/src/web/serve"
 )
 
 func main(){
-	service.InitConfig()
+	r := serve.SetupRoutes()
+	http.Handle("/", r)
 
-	dbErr := mysql.InitDb()
+	_ = r.Walk(func(route *mux.Route, router *mux.Router, ancestors []*mux.Route) error {
+		t, perr := route.GetPathTemplate()
 
-	if dbErr != nil {
-		alaskalog.Logger.Fatalln("Failed to initialize db.")
-	}
+		if perr != nil {
+			alaskalog.Logger.Warnln(perr)
 
-	mux := serve.SetupRoutes()
+			return perr
+		}
+
+		alaskalog.Logger.Infof("%s", t)
+
+		return nil
+	})
 
 	g, _ := errgroup.WithContext(context.Background())
 
@@ -41,5 +48,5 @@ func main(){
 
 	alaskalog.Logger.Infoln("Saruman is now running. Listening on port :3000...")
 
-	alaskalog.Logger.Fatal(http.ListenAndServe(":3000", mux))
+	alaskalog.Logger.Fatal(http.ListenAndServe(":3000", r))
 }

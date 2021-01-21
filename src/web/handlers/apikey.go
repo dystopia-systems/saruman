@@ -6,7 +6,7 @@ import (
 	"saruman/src/service"
 )
 
-func ApiKeyBaseGetHandler(w http.ResponseWriter, r *http.Request) {
+func ApiKeyGet(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-type", "application/json")
 
 	key, success := service.CreateApiKey()

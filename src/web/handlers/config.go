@@ -11,7 +11,7 @@ import (
 	"saruman/src/service"
 )
 
-func ConfigAppGetHandler(w http.ResponseWriter, r *http.Request) {
+func ConfigGet(w http.ResponseWriter, r *http.Request) {
 	pathParams := mux.Vars(r)
 
 	w.Header().Set("Content-type", "application/json")
@@ -46,7 +46,7 @@ func ConfigAppGetHandler(w http.ResponseWriter, r *http.Request) {
 	return
 }
 
-func ConfigAppPostHandler(w http.ResponseWriter, r *http.Request) {
+func ConfigPost(w http.ResponseWriter, r *http.Request) {
 	pathParams := mux.Vars(r)
 
 	w.Header().Set("Content-type", "application/json")
@@ -94,7 +94,7 @@ func ConfigAppPostHandler(w http.ResponseWriter, r *http.Request) {
 	return
 }
 
-func ConfigAppPutHandler(w http.ResponseWriter, r *http.Request) {
+func ConfigPut(w http.ResponseWriter, r *http.Request) {
 	pathParams := mux.Vars(r)
 
 	w.Header().Set("Content-type", "application/json")

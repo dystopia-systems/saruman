@@ -1,6 +1,7 @@
 package service
 
 import (
+	"github.com/dystopia-systems/alaskalog"
 	"saruman/src/core/db/mysql"
 	"saruman/src/models"
 )
@@ -19,6 +20,8 @@ func CreateApiKey() (*models.ApiKey, bool) {
 	apiKey, err := mysql.CreateApiKey()
 
 	if err != nil {
+		alaskalog.Logger.Warnf("Failed to create Api-Key %+v", err)
+
 		return nil, false
 	}
 
