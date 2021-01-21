@@ -16,7 +16,7 @@ func SetupRoutes() *mux.Router {
 
 	r.Path(consts.BasePath).HandlerFunc(handlers.IndexGet)
 
-	api := r.PathPrefix("/v1/api").Subrouter()
+	api := r.PathPrefix("/api/v1").Subrouter()
 
 	apiKeyRoute := api.PathPrefix(consts.ApiKeyPath).Subrouter()
 	apiKeyRoute.Methods(http.MethodGet).Path(consts.BasePath).HandlerFunc(handlers.ApiKeyGet)
