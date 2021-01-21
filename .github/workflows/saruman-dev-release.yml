@@ -24,8 +24,6 @@ jobs:
         with:
           tags: xburrow/saruman:latest-dev
           push: true
-          secrets: |
-            GIT_AUTH_TOKEN=${{ github.token }}
           file: ./Dockerfile
       - name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
