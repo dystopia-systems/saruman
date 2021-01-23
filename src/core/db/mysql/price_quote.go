@@ -5,8 +5,8 @@ import (
 	"saruman/src/models"
 )
 
-func GetYahooQuote(symbol string) *models.YahooQuote {
-	var res []models.YahooQuote
+func GetYahooQuote(symbol string) *models.PriceQuote {
+	var res []models.PriceQuote
 
 	context := GetDb()
 
@@ -17,7 +17,7 @@ func GetYahooQuote(symbol string) *models.YahooQuote {
 
 	if context.Error != nil {
 		alaskalog.Logger.Warnf("Failed to execute query %v", context.Error)
-		return &models.YahooQuote{}
+		return &models.PriceQuote{}
 	}
 
 	if len(res) > 0 {
@@ -27,7 +27,7 @@ func GetYahooQuote(symbol string) *models.YahooQuote {
 	return nil
 }
 
-func CreateYahooQuote(quote *models.YahooQuote) (*models.YahooQuote, error) {
+func CreateYahooQuote(quote *models.PriceQuote) (*models.PriceQuote, error) {
 	context := GetDb()
 
 	context.Create(&quote)

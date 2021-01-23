@@ -30,6 +30,10 @@ func SetupRoutes() *mux.Router {
 	yahooQuoteRoute := apiQuoteRoute.PathPrefix(consts.YahooPath).Subrouter()
 	yahooQuoteRoute.Methods(http.MethodGet).PathPrefix(consts.IdVar).HandlerFunc(handlers.QuoteYahooGet)
 
+	apiHistoricalRoute := api.PathPrefix(consts.HistoricalPath).Subrouter()
+	yahooHistoricalRoute := apiHistoricalRoute.PathPrefix(consts.YahooPath).Subrouter()
+	yahooHistoricalRoute.Methods(http.MethodGet).PathPrefix(consts.IdVar).HandlerFunc(handlers.HistoricalYahooGet)
+
 	api.Use(middleware.AuthorizeApiKey)
 	api.Use(middleware.VerifyContentType)
 

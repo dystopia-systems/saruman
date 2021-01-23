@@ -11,7 +11,7 @@ func InitMigration() error {
 	alaskalog.Logger.Infoln("Auto-migrating...")
 
 	_ = db.AutoMigrate(&models.ApiKey{})
-	_ = db.AutoMigrate(&models.YahooQuote{})
+	_ = db.AutoMigrate(&models.PriceQuote{})
 
 	return nil
 }

@@ -5,7 +5,7 @@ import (
 	"time"
 )
 
-type YahooQuote struct {
+type PriceQuote struct {
 	ID uint64 `gorm:"primaryKey" json:"id"`
 
 	finance.Quote
