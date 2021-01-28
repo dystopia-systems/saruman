@@ -2,20 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5f6f3ec0-2f7e-41fe-83db-d5c243050c64" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/pub/gosniff-dev.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pub/gosniff-invest.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/core/db/mysql/historical.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/models/historical.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/service/historical.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/web/handlers/historical.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/consts/routes.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/consts/routes.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/db/mysql/init.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/db/mysql/init.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/db/mysql/yahooquote.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/db/mysql/price_quote.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/yahooquote.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/price_quote.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/service/quote.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/quote.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/web/handlers/quote.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/web/handlers/quote.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/web/serve/request.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/web/serve/request.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/apikey.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/historical.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/price_quote.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/service/historical.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/historical.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,17 +46,17 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="go.import.settings.migrated" value="true" />
     <property name="go.tried.to.enable.integration.vgo.integrator" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../elias" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="project.scopes" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\saruman\src\core\db\mysql" />
+      <recent name="D:\saruman\src\core\db" />
       <recent name="D:\saruman\src\models" />
       <recent name="D:\saruman\src\models\web" />
       <recent name="D:\saruman\src\web" />
-      <recent name="D:\saruman" />
-      <recent name="D:\saruman\src" />
     </key>
   </component>
   <component name="RunManager" selected="Go Build.go build saruman">
@@ -203,26 +194,26 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="740" y="280" key="FileChooserDialogImpl/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1603897988507" />
-    <state width="1877" height="387" key="GridCell.Tab.0.bottom" timestamp="1611304586370">
+    <state width="1877" height="123" key="GridCell.Tab.0.bottom" timestamp="1611499579735">
       <screen x="1920" y="0" width="1920" height="1050" />
     </state>
     <state width="1877" height="285" key="GridCell.Tab.0.bottom/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1611253442268" />
-    <state width="1877" height="387" key="GridCell.Tab.0.bottom/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1611304586370" />
-    <state width="1877" height="387" key="GridCell.Tab.0.center" timestamp="1611304586370">
+    <state width="1877" height="123" key="GridCell.Tab.0.bottom/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1611499579735" />
+    <state width="1877" height="123" key="GridCell.Tab.0.center" timestamp="1611499579734">
       <screen x="1920" y="0" width="1920" height="1050" />
     </state>
     <state width="1877" height="285" key="GridCell.Tab.0.center/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1611253442267" />
-    <state width="1877" height="387" key="GridCell.Tab.0.center/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1611304586370" />
-    <state width="1877" height="387" key="GridCell.Tab.0.left" timestamp="1611304586370">
+    <state width="1877" height="123" key="GridCell.Tab.0.center/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1611499579734" />
+    <state width="1877" height="123" key="GridCell.Tab.0.left" timestamp="1611499579734">
       <screen x="1920" y="0" width="1920" height="1050" />
     </state>
     <state width="1877" height="285" key="GridCell.Tab.0.left/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1611253442267" />
-    <state width="1877" height="387" key="GridCell.Tab.0.left/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1611304586370" />
-    <state width="1877" height="387" key="GridCell.Tab.0.right" timestamp="1611304586370">
+    <state width="1877" height="123" key="GridCell.Tab.0.left/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1611499579734" />
+    <state width="1877" height="123" key="GridCell.Tab.0.right" timestamp="1611499579734">
       <screen x="1920" y="0" width="1920" height="1050" />
     </state>
     <state width="1877" height="285" key="GridCell.Tab.0.right/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1611253442268" />
-    <state width="1877" height="387" key="GridCell.Tab.0.right/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1611304586370" />
+    <state width="1877" height="123" key="GridCell.Tab.0.right/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1611499579734" />
     <state width="1877" height="209" key="GridCell.Tab.1.bottom" timestamp="1611304565370">
       <screen x="1920" y="0" width="1920" height="1050" />
     </state>

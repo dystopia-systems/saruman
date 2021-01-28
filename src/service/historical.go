@@ -7,10 +7,9 @@ import (
 	"github.com/piquette/finance-go"
 	"github.com/piquette/finance-go/chart"
 	"saruman/src/core/db/mysql"
-	"saruman/src/models"
 )
 
-func GetHistoricalYahoo(request *chart.Params) (*models.Historical, error) {
+func GetHistoricalYahoo(request *chart.Params) (*mysql.Historical, error) {
 	requestBytes, _ := json.Marshal(request)
 	requestUuid, _ := uuid.FromBytes(requestBytes)
 
@@ -29,18 +28,8 @@ func GetHistoricalYahoo(request *chart.Params) (*models.Historical, error) {
 			alaskalog.Logger.Warnln(err)
 		}
 
-		res, err := CreateHistoricalYahoo(bars, requestUuid)
-
-		if err != nil {
-			return nil, err
-		}
-
-		return res, nil
+		return nil, nil
 	}
 
 	return savedQuote, nil
-}
-
-func CreateHistoricalYahoo(bars []finance.ChartBar, requestUuid uuid.UUID) (*models.Historical, error) {
-
 }
