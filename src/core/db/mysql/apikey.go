@@ -2,7 +2,6 @@ package mysql
 
 import (
 	"github.com/dystopia-systems/alaskalog"
-	"github.com/google/uuid"
 	"saruman/src/models"
 	"time"
 )
@@ -28,11 +27,11 @@ func GetApiKey(key string) *models.ApiKey {
 	return nil
 }
 
-func CreateApiKey() (*models.ApiKey, error) {
+func CreateApiKey(key string) (*models.ApiKey, error) {
 	context := GetDb()
 
 	apiKey := models.ApiKey{
-		Key:              uuid.New().String(),
+		Key:              key,
 		ConfigPermission: false,
 		CreatedAt: time.Now(),
 		UpdatedAt: time.Now(),

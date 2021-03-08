@@ -2,16 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5f6f3ec0-2f7e-41fe-83db-d5c243050c64" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/pub/testing.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/consts/routes.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/consts/routes.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/db/mysql/apikey.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/db/mysql/apikey.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/service/auth.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/auth.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/service/config.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/config.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/web/handlers/apikey.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/web/handlers/apikey.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/web/handlers/config.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/web/handlers/config.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/web/handlers/index.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/web/handlers/index.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/web/serve/request.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/web/serve/request.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,7 +20,7 @@
       </list>
     </option>
   </component>
-  <component name="GOROOT" path="C:\Go" />
+  <component name="GOROOT" url="file://C:/Program Files/Go" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -71,11 +66,7 @@
       <go_parameters value="-i" />
       <envs>
         <env name="MYSQL_CONN_STRING" value="harb:HueHue123@tcp(127.0.0.1:3306)/saruman?charset=utf8mb4&amp;parseTime=True&amp;loc=Local" />
-        <env name="EVE_ESI_CLIENT_ID" value="aa66120a97504f9fbcaba26c3d70322d" />
-        <env name="EVE_ESI_SECRET_KEY" value="xtdfonVSf8KdQ1lZw252hnoD23r06fKJWBLmVhv8" />
-        <env name="EVE_ESI_CALLBACK_URL" value="http://localhost:3000/eve-esi/auth/callback" />
-        <env name="EVE_ESI_SCOPES" value="esi-markets.structure_markets.v1" />
-        <env name="EVE_ESI_USERAGENT" value="Einstein-bot, contact boris.lachevbg00@gmail.com" />
+        <env name="INITIAL_API_KEY" value="270492bf-bbfd-4974-a61b-507aa948e99d" />
         <env name="MY_SQL_GORM_CONN_STRING" value="harb:HueHue123@tcp(127.0.0.1:3306)/saruman?charset=utf8mb4&amp;parseTime=True&amp;loc=Local" />
       </envs>
       <kind value="PACKAGE" />
@@ -173,64 +164,6 @@
   </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="724" y="233" width="471" height="600" key="#Build_Tags_&amp;_Vendoring" timestamp="1611245460323">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state x="724" y="233" width="471" height="600" key="#Build_Tags_&amp;_Vendoring/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1611245460323" />
-    <state x="362" y="229" width="1092" height="688" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1611245953690">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state x="362" y="229" width="1092" height="688" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1611245953690" />
-    <state x="735" y="327" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1611245987879">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state x="735" y="327" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1611245987879" />
-    <state width="717" height="466" key="DebuggerActiveHint" timestamp="1611247097759">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state width="717" height="466" key="DebuggerActiveHint/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1611247097759" />
-    <state x="775" y="328" width="617" height="489" key="EnvironmentVariablesDialog" timestamp="1611245952196">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state x="775" y="328" width="617" height="489" key="EnvironmentVariablesDialog/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1611245952196" />
-    <state x="740" y="280" key="FileChooserDialogImpl" timestamp="1603897988507">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state x="740" y="280" key="FileChooserDialogImpl/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1603897988507" />
-    <state width="1877" height="285" key="GridCell.Tab.0.bottom" timestamp="1611253442268">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state width="1877" height="285" key="GridCell.Tab.0.bottom/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1611253442268" />
-    <state width="1877" height="285" key="GridCell.Tab.0.center" timestamp="1611253442267">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state width="1877" height="285" key="GridCell.Tab.0.center/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1611253442267" />
-    <state width="1877" height="285" key="GridCell.Tab.0.left" timestamp="1611253442267">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state width="1877" height="285" key="GridCell.Tab.0.left/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1611253442267" />
-    <state width="1877" height="285" key="GridCell.Tab.0.right" timestamp="1611253442268">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state width="1877" height="285" key="GridCell.Tab.0.right/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1611253442268" />
-    <state width="1877" height="342" key="GridCell.Tab.1.bottom" timestamp="1611248021513">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state width="1877" height="342" key="GridCell.Tab.1.bottom/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1611248021513" />
-    <state width="1877" height="342" key="GridCell.Tab.1.center" timestamp="1611248021513">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state width="1877" height="342" key="GridCell.Tab.1.center/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1611248021513" />
-    <state width="1877" height="342" key="GridCell.Tab.1.left" timestamp="1611248021513">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state width="1877" height="342" key="GridCell.Tab.1.left/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1611248021513" />
-    <state width="1877" height="342" key="GridCell.Tab.1.right" timestamp="1611248021513">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state width="1877" height="342" key="GridCell.Tab.1.right/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1611248021513" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

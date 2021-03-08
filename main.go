@@ -6,7 +6,9 @@ import (
 	"github.com/gorilla/mux"
 	"golang.org/x/sync/errgroup"
 	"net/http"
+	"os"
 	"saruman/src/core/db/mysql"
+	"saruman/src/service"
 	"saruman/src/web/serve"
 )
 
@@ -49,6 +51,18 @@ func main(){
 	if migrationErr != nil {
 		alaskalog.Logger.Fatalf("Failed to migrate db. %v", migrationErr)
 		return
+	}
+
+	initKey := os.Getenv("INITIAL_API_KEY")
+	success := service.VerifyApiKey(initKey)
+	if !success {
+		key, ok := service.CreateInitialKey()
+
+		if !ok {
+			alaskalog.Logger.Fatalf("failed to create initial key")
+		}
+
+		alaskalog.Logger.Infoln("initial key created: ", key.Key)
 	}
 
 	alaskalog.Logger.Infoln("Saruman is now running. Listening on port :3000...")
