@@ -5,22 +5,19 @@ services:
     image: mariadb
     restart: always
     hostname: saruman-db
-    container_name: saruman-db
     command: --default-authentication-plugin=mysql_native_password
     environment:
       MYSQL_DATABASE: saruman
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
 
   api:
+    image: xburrow/saruman:latest-prod
     restart: always
-    container_name: saruman-api
     hostname: saruman-api
     depends_on:
       - "db"
-    build:
-      context: .
     ports:
-      - "3000:3000"
+      - "3000"
     volumes:
       - /docker-mnt/saruman-api:/go/saruman/src
     environment:
@@ -29,7 +26,6 @@ services:
   adminer:
     image: adminer
     restart: always
-    container_name: saruman-adminer
     hostname: saruman-adminer
     depends_on:
       - "db"
